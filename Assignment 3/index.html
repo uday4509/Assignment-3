@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <label class="theme-switch">
+      <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+      <span class="slider-icon"></span>
+    </label>
+
+    <h2>> Generate a secure password</h2>
+
+    <div class="password-box">
+      <input type="text" id="password" readonly>
+      <button onclick="copyPassword()">📋</button>
+    </div>
+
+    <hr>
+
+    <h3>Customize your password</h3>
+    <div class="options-box">
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+        <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+        <label><input type="checkbox" id="numbers" checked> Numeric</label>
+        <label><input type="checkbox" id="symbols"> Symbols</label>
+      </div>
+      <div class="length-wrapper">
+    <label class="length-label">Password Length : <span id="slider-value">20</span></label>
+    <div class="length-slider">
+      <input type="range" id="length" min="4" max="50" value="20">
+    </div>
+      </div>
+    </div>
+
+    <button class="generate-btn" onclick="generatePassword()">Generate</button>
+
+    <footer>Made with ❤️ by <span>Uday Verma</span></footer>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html>
+

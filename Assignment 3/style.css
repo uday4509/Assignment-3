@@ -1,0 +1,261 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #1e1e1e;
+  color: white;
+  padding: 30px;
+  width: 800px;
+  position: relative;
+  box-shadow: 0 0 25px #00ff00;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Theme Toggle */
+.theme-switch {
+  position: absolute;
+  top: 43px;
+  right: 30px;
+  width: 50px;
+  height: 26px;
+  display: inline-block;
+  margin-right: 80px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-icon {
+  position: absolute;
+  cursor: pointer;
+  background-color: #555;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s;
+}
+
+.slider-icon::before {
+  content: "\1F319"; /* 🌙 */
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.4s, content 0.4s;
+}
+
+.theme-switch input:checked + .slider-icon::before {
+  transform: translateX(24px);
+  content: "\2600"; /* ☀️ */
+}
+
+body.light .slider-icon {
+  background-color: #ccc;
+}
+
+h2 {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.password-box {
+  display: flex;
+  align-items: center;
+  background: #111;
+  padding: 10px;
+  margin-left: 70px;
+  margin-right: 75px;
+  border-bottom: 2px solid #555;
+  border-top: 2px solid #555;
+  border-left:2px solid #555;
+  border-right:2px solid #555;
+}
+
+.password-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.password-box button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #555;
+  margin: 10px;
+  margin-left: 70px;
+  margin-right: 75px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-left: 70px;
+}
+
+.options-box {
+  border: 1px solid #888;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 70px;
+  margin-right: 75px;
+  width: 600px;
+  height: 150px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #00ff00;
+  margin-left: 10px;
+}
+
+.length-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.length-label {
+  font-size: 14px;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
+.length-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 45px;
+}
+
+.length-slider input[type="range"] {
+  width: 190px;
+  accent-color: #00ff00;
+}
+
+.generate-btn {
+  padding: 10px;
+  width: 120px;
+  background: limegreen;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+  margin-left: 70px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+footer span {
+  color: limegreen;
+}
+
+body.light {
+  background: #f5f5f5;
+}
+
+body.light .container {
+  background: #ffffff;
+  color: black;
+  box-shadow: 0 0 20px #ccc;
+}
+
+body.light .password-box {
+  background: #e0e0e0;
+}
+
+body.light .password-box input {
+  color: black;
+}
+
+body.light .generate-btn {
+  background: #007bff;
+  color: white;
+}
+
+body.light hr {
+  border-top-color: #ccc;
+}
+
+@media (max-width: 450px) {
+  .options-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .length-wrapper {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .length-slider {
+    justify-content: flex-start;
+  }
+}
